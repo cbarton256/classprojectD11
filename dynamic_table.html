@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang=”en”>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Dynamic List</title>
+<meta charset="utf-8" />
+<title>Dynamic Table</title>
 <script src="js/dynamic_table.js"></script>
 <style>
 /* Form Style */
@@ -46,55 +46,9 @@ th {
    text-decoration: underline;
 }
 </style>
-<script>
-function addShow() {
-   // get input from User
-   var text = document.getElementById("getInput").value;
-   // create new DOM list node
-   var node = document.createElement("li");
-   // add new show text to DOM list node
-   node.innerHTML = text;
-   // append new show at end of list
-   // document.getElementById("theList").appendChild(node);
-   
-   // append new show after Much Apu About Nothing
-   // and before A Streetcar Named Marge
-   var place = document.getElementById("8F18");
-   document.getElementById("theList").insertBefore(node,place);
-}
-function setColors() {
-	// get number of rows in array
-	var rows = document.getElementById("theList").getElementsByTagName("li");
-	
-	// get color inputs from user in array
-	var colors = [color1.value, color2.value];
-	
-	// color odd and even rows
-	for (var i=1; i<rows.length; i++) {
-		rows[i].style.backgroundColor = colors[i % 2];
-	}
-}
-</script>
+
 </head>
-<body>
-  <fieldset>
-  <legend>List Manager</legend>
-  <form>
-    <label for="getInput">Title:</label>
-    <input type="text" id="getInput" />
-    <input type="button" value="Add" onclick="addShow();"/><br />
-    <input type="reset" value="Reset" />
-  </form>
-  </fieldset>
-  <fieldset>
-  <legend>Display Manager</legend>
-    <label for="color1">Color #1:</label>
-    <input type="color" id="color1" value="yellow"><br />
-    <label for="color2">Color #2:</label>
-    <input type="color" id="color2" value="limeGreen"><br />
-    <button type="button" onclick="setColors(color1,color2);">Color</button>
-  </fieldset>
-  
+<body> 
   <!-- Content Starts Here -->
   <h2>A Better Address Book - Please enter the following information:</h2>
   <fieldset>

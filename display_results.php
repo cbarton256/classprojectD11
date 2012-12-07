@@ -44,7 +44,7 @@
 <html lang=”en”>
 <head>
     <title>Future Value Calculator</title>
-    <link rel="stylesheet" type="text/css" href="main.css"/>
+    <link rel="stylesheet" type="text/css" href="css/future_calc_main.css"/>
 </head>
 <body>
     <div id="content">

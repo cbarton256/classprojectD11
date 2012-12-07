@@ -2,13 +2,14 @@
 <html lang=”en”>
    <head>
       <meta content="text/html; charset=UTF-8"/>
-      <title>Product Discount Home</title>
+      <title>Invoice Total Calculator</title>
       <!-- add image stuff from day 3 -->
       <link rel="shortcut icon" href="images/homer.ico"/>
       <!-- style stuff from day 4 -->
       <!--  <link rel="stylesheet" href="css/reset.css" /> -->
       <link rel="stylesheet" href="css/HomerProjectD7.css"/>
       <link rel="stylesheet" href="css/nav.css"/>
+      <script src="js/calculatorV5.js"></script>
       <style>
       /* Layout */
       form {
@@ -54,7 +55,7 @@
           <h2>Rock On!</h2>
        </hgroup>
           <nav>
-            <a href="product_discountD8.html">Home</a>
+            <a href="invoice_total.html">Home</a>
             <a href="email_form.html">Forms</a>
             <a href="multi_columnPD.html">Layout</a>
             <a href="table.html">Tables</a>
@@ -70,24 +71,45 @@
           <h1>Everything is on sale for Halloween</h1>
        </header>
        <h2 id="mainContent">Product Invoice Calculator</h2>
-       <form action="display_discount_get.php" method="get">
+       <form>
        <!-- Data Entry -->
           <div id="data">
              <label>Product Description:</label>         
-             <input type="text" name="product_description"/><br />
+             <input type="text" id="productDescription"/><br />
+             
+             <label>Customer Type:</label>
+             <select name="type" id="type">
+                <option value="R">Retail</option>
+                <option value="C">Commercial</option>
+             </select><br />
              
              <label>List Price:</label>
-             <input type="text" name="list_price" /><br />
+             <input type="number" id="listPrice" /><br />
              
              <label>Discount Percent:</label>
-             <input type="text" name="discount_percent" />%<br />
+             <input type="number" id="discountPercent" disabled/>%<br />
              
           </div>
        <!-- Submit -->
           <div id="buttons">
              <label>&nbsp;</label>
-             <input type="submit" value="Calculate Discount" /><br />
+             <input type="button" value="Calculate Discount" onclick="calculate();"/><br />
           </div>
+          
+          <!-- output for JavaScript -->
+          <div id="output">
+            <label>Discount Amount:</label>
+            <output id="discount" for="listPrice discountPercent">
+               </output><br/>
+            
+            <label>Discount Price:</label>
+            <output id="discountPrice" for="listPrice discount">
+               </output><br/>
+          </div>
+       <!-- today's date -->
+       <br />
+       <script>getToday();</script>
+       <noscript>You must enable JavaScript for this application.</noscript>
        </form>
        </section>
       <footer>
